@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+  <studio_uuid>8466bd24-fd59-11df-9f90-475ae2f5345b</studio_uuid>
+  <appliance_uuid>e9cacd94-aaba-11e6-afb5-a76352074698</appliance_uuid>
+  <config>
+    <image name="MyAccess_openSUSE_13.2_GNOME_desktop" displayname="MyAccess_openSUSE_13.2_GNOME_desktop" schemaversion="5.2">
+      <description type="system">
+        <author>Tom H</author>
+        <contact>studio-devel@suse.de</contact>
+        <specification>openSUSE 13.2 GNOME</specification>
+      </description>
+      <preferences>
+        <type checkprebuilt="true" boot="oemboot/suse-13.2" fsnocheck="true" filesystem="ext3" bootloader="grub2" kernelcmdline="quiet" fsmountoptions="acl" image="oem">
+          <oemconfig>
+            <oem-swap>false</oem-swap>
+            <oem-boot-title>MyAccess openSUSE 13.2, GNOME desktop</oem-boot-title>
+          </oemconfig>
+        </type>
+        <version>0.0.2</version>
+        <packagemanager>ensconce</packagemanager>
+        <rpm-check-signatures>false</rpm-check-signatures>
+        <rpm-force>false</rpm-force>
+        <boot-theme>studio</boot-theme>
+        <timezone>UTC</timezone>
+        <hwclock>localtime</hwclock>
+        <locale>en_US</locale>
+      </preferences>
+      <users group="root">
+        <user name="root" pwd="$1$2FGsmU6v$oijBIfENPSgEB9ZGJxIW0." home="/root" shell="/bin/bash"/>
+      </users>
+      <users group="users">
+        <user name="tux" pwd="$1$CscK5bA7$DEDvVx8scG9D6pG4rDqRD/" home="/home/tux" shell="/bin/bash"/>
+      </users>
+      <repository type="rpm-md">
+        <source path="http://download.opensuse.org/update/13.2/"/>
+      </repository>
+      <repository type="yast2">
+        <source path="http://download.opensuse.org/distribution/13.2/repo/oss/"/>
+      </repository>
+      <packages type="image" patternType="onlyRequired">
+        <package name="MozillaFirefox"/>
+        <package name="kernel-pae"/>
+        <package name="java-1_8_0-openjdk-plugin"/>
+        <package name="gnome-power-manager"/>
+        <package name="gdm"/>
+        <package name="gnome-terminal"/>
+        <package name="gtk2-branding-openSUSE"/>
+        <package name="gtk3-branding-openSUSE"/>
+        <package name="gvfs-backends"/>
+        <package name="libgnomesu"/>
+        <package name="tomboy"/>
+        <package name="yast2-control-center-gnome"/>
+        <package name="libyui-gtk-pkg6"/>
+        <package name="dbus-1-x11"/>
+        <package name="icewm"/>
+        <package name="x11-tools"/>
+        <package name="xf86-video-modesetting"/>
+        <package name="xorg-x11"/>
+        <package name="xorg-x11-driver-input"/>
+        <package name="xorg-x11-driver-video"/>
+        <package name="xorg-x11-fonts"/>
+        <package name="xorg-x11-server"/>
+        <package name="yast2-branding-openSUSE"/>
+        <package name="yast2-x11"/>
+        <package name="SuSEfirewall2"/>
+        <package name="grub2"/>
+        <package name="glibc-locale"/>
+        <package name="iputils"/>
+        <package name="less"/>
+        <package name="plymouth"/>
+        <package name="syslog-ng"/>
+        <package name="vim"/>
+        <package name="yast2"/>
+        <package name="yast2-firstboot"/>
+        <package name="zypper"/>
+        <package name="e2fsprogs"/>
+        <package name="aaa_base"/>
+        <package name="branding-openSUSE"/>
+        <package name="patterns-openSUSE-base"/>
+        <package name="hwinfo"/>
+        <package name="netcfg"/>
+        <package name="openSUSE-build-key"/>
+        <package name="openssh"/>
+        <package name="polkit-default-privs"/>
+        <package name="rpcbind"/>
+        <package name="timezone"/>
+        <package name="gsettings-backend-dconf"/>
+        <archive name="plymouth.tar" bootinclude="true"/>
+        <package name="gfxboot-devel" bootinclude="true"/>
+        <archive name="gdm.tar"/>
+      </packages>
+      <packages type="bootstrap">
+        <package name="filesystem"/>
+        <package name="glibc-locale"/>
+        <package name="module-init-tools"/>
+      </packages>
+    </image>
+  </config>
+  <extra_config name="MyAccess_openSUSE_13.2_GNOME_desktop">
+    <appliance_id>1654104</appliance_id>
+    <arch>i686</arch>
+    <version>0.0.2</version>
+    <logo>02/d3230a1e4c9773cc12fa74982a16d2</logo>
+    <background>61/5f185505405d47bc5a5f3e7ceaafdb</background>
+    <base_system>13.2</base_system>
+    <image_type>oem</image_type>
+    <time_zone>UTC</time_zone>
+    <region>Global</region>
+    <default_runlevel>5</default_runlevel>
+    <install_recommended>false</install_recommended>
+    <xen_host>false</xen_host>
+    <exclude_docs>false</exclude_docs>
+    <disable_branding>false</disable_branding>
+    <template>openSUSE 13.2, GNOME desktop</template>
+    <locale>
+      <language>en_US.UTF-8</language>
+      <keytable>us.map.gz</keytable>
+    </locale>
+    <estimated_size>1900</estimated_size>
+    <size_offset>0</size_offset>
+    <non_interactive/>
+    <oem_disk_size>16G</oem_disk_size>
+    <check_supportability>false</check_supportability>
+    <repository type="rpm-md">
+      <source path="http://download.opensuse.org/update/13.2/" internal="false"/>
+      <name>openSUSE 13.2 Updates</name>
+    </repository>
+    <repository type="yast2">
+      <source path="http://download.opensuse.org/distribution/13.2/repo/oss/" internal="false"/>
+      <name>openSUSE 13.2 OSS</name>
+    </repository>
+    <network config="dhcp">
+    </network>
+    <startup_programs>
+    </startup_programs>
+    <overlay_files remove="">
+    </overlay_files>
+    <firewall>
+      <firewall_enabled>yes</firewall_enabled>
+      <firewall_ssh>closed</firewall_ssh>
+      <firewall_http>opened</firewall_http>
+      <firewall_webyast>closed</firewall_webyast>
+    </firewall>
+    <webyast enabled="false" version="">
+    </webyast>
+    <auto_login user_name="tux" home_dir="/home/tux"/>
+    <x_keyboard model="microsoftpro" layout="us" variant="" keycode="xfree86" LA="" RA="" SL="" RC="" OPT=""/>
+    <enable_root_firstboot>false</enable_root_firstboot>
+    <window_manager>gnome</window_manager>
+    <display_manager>gdm</display_manager>
+  </extra_config>
+</manifest>

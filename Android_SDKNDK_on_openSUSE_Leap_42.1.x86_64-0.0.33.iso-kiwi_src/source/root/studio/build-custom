@@ -1,0 +1,30 @@
+#!/bin/bash -e
+#
+# This script is executed at the end of appliance creation.  Here you can do
+# one-time actions to modify your appliance before it is ever used, like
+# removing files and directories to make it smaller, creating symlinks,
+# generating indexes, etc.
+#
+# The 'kiwi_type' variable will contain the format of the appliance
+# (oem = disk image, vmx = VMware, iso = CD/DVD, xen = Xen).
+#
+
+# read in some variables
+. /studio/profile
+
+# read in KIWI utility functions
+. /.kconfig
+
+chmod -R a+r /opt
+find /opt -executable -exec chmod a+x {} \;
+
+#echo "export ANDROID_NDK_ROOT=/opt/android-ndk-r13b" >> /home/android/.bashrc
+#echo "export NDK_ROOT=/opt/android-ndk-r13b" >> /home/android/.bashrc
+#echo "export NDK=/opt/android-ndk-r13b" >> /home/android/.bashrc
+#echo "export ANDROID_HOME=/opt/android-sdk-linux" >> /home/android/.bashrc
+#echo "export ANDROID_SDK_ROOT=/opt/android-sdk-linux" >> /home/android/.bashrc
+echo 'PATH=$PATH:/opt/android-studio/bin' >> /home/android/.bashrc
+#mv /opt/android-sdk-linux/platforms/android-3.1_r03-linux /opt/android-sdk-linux/platforms/android-12
+#echo "y" | sh /opt/android-sdk-linux/tools/android update sdk -t 1,2,3,18 -s -u
+#echo "no" | sh /opt/android-sdk-linux/tools/android create avd -t 1 -n avd1
+# ln -s /etc/ssl/certs/* /opt/Citrix/ICAClient/keystore/cacerts/
